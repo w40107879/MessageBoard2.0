@@ -13,3 +13,7 @@ const mix = require('laravel-mix');
 
 mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css');
+mix.js('resources/assets/js/hello.js', 'public/js')
+    .js('resources/assets/js/post.js', 'public/js')
+    .extract(['lodash','jquery','axios','vue'])
+    .sass('resources/assets/sass/app.scss', 'public/css');
