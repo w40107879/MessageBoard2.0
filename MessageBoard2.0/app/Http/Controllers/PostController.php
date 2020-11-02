@@ -88,7 +88,7 @@ class PostController extends Controller
      */
     public function deletePost($id)
     {
-        $row = Post::destory($id);
+        $row = Post::destroy($id);
         $result = ($row > 0);
         return response()->json(['result'=> $result],200);
     }

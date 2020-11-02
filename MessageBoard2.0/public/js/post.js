@@ -121,7 +121,7 @@ __webpack_require__.r(__webpack_exports__);
     },
     remove: function remove(id) {
       var self = this;
-      axios.post('/api/posts/' + id).then(function (response) {
+      axios["delete"]('/api/posts/' + id).then(function (response) {
         if (response.data['result']) {
           self.init();
         }

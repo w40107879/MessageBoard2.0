@@ -111,7 +111,7 @@ export default {
 
         remove: function (id) {
             let self = this;
-            axios.post('/api/posts/' + id)
+            axios.delete('/api/posts/' + id)
                 .then(function (response) {
                     if (response.data['result']) {
                         self.init();
