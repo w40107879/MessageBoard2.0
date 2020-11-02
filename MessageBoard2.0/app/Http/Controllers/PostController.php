@@ -54,7 +54,7 @@ class PostController extends Controller
         $post->body = $request->input('body','');
         $result = $post->save();
 
-        return response()->json(['result',$result],200);
+        return response()->json(['result' => $result],200);
     }
 
     /**

@@ -68,7 +68,7 @@ export default {
             let self = this;
             axios.post('/api/posts', this.post)
                 .then(function (response) {
-                    if (response.data['ok']) {
+                    if (response.data['result']) {
                         self.init();
                         self.titleWarning = false;
                         self.bodyWarning = false;
@@ -93,7 +93,7 @@ export default {
             let self = this;
             axios.put('/api/posts/' + this.post.id, this.post)
                 .then(function (response) {
-                    if (response.data['ok']) {
+                    if (response.data['result']) {
                         self.init();
                         self.isSave = false;
                         self.post = {id:null, title: '', body:''};
@@ -111,9 +111,9 @@ export default {
 
         remove: function (id) {
             let self = this;
-            axios.delete('/api/posts/' + id)
+            axios.post('/api/posts/' + id)
                 .then(function (response) {
-                    if (response.data['ok']) {
+                    if (response.data['result']) {
                         self.init();
                     }
                 })

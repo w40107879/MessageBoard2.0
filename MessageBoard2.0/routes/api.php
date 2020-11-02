@@ -21,4 +21,4 @@ Route::get('/posts', 'PostController@getAllPost');
 Route::get('/posts/{id}', 'PostController@findPostById');
 Route::post('/posts', 'PostController@createPost');
 Route::put('/posts/{id}', 'PostController@editPost');
-Route::delete('/posts/(id)', 'PostController@deletePost');
+Route::post('/posts/(id)', 'PostController@deletePost');

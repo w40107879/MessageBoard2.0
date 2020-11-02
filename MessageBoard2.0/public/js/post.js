@@ -73,7 +73,7 @@ __webpack_require__.r(__webpack_exports__);
 
       var self = this;
       axios.post('/api/posts', this.post).then(function (response) {
-        if (response.data['ok']) {
+        if (response.data['result']) {
           self.init();
           self.titleWarning = false;
           self.bodyWarning = false;
@@ -98,7 +98,7 @@ __webpack_require__.r(__webpack_exports__);
     save: function save() {
       var self = this;
       axios.put('/api/posts/' + this.post.id, this.post).then(function (response) {
-        if (response.data['ok']) {
+        if (response.data['result']) {
           self.init();
           self.isSave = false;
           self.post = {
@@ -121,8 +121,8 @@ __webpack_require__.r(__webpack_exports__);
     },
     remove: function remove(id) {
       var self = this;
-      axios["delete"]('/api/posts/' + id).then(function (response) {
-        if (response.data['ok']) {
+      axios.post('/api/posts/' + id).then(function (response) {
+        if (response.data['result']) {
           self.init();
         }
       })["catch"](function (response) {
