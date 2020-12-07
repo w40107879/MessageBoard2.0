@@ -7,12 +7,16 @@ use PHPUnit\Framework\TestCase;
 class UserTest extends TestCase
 {
     /**
-     * A basic unit test example.
+     * A basic unit test of post.
      *
      * @return void
      */
-    public function testExample()
+    public function testPost()
     {
-        $this->assertTrue(true);
+        $first = factory(Post::class)->create();
+        $second = factory(Post::class)->create();
+
+        $posts = Post::createPost();
+        $this->assertCount(2, $posts);
     }
 }
