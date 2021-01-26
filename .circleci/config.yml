@@ -25,4 +25,6 @@ jobs:
       - run: sudo docker-php-ext-install zip
 
       # run tests with phpunit or codecept
-      - run: ./vendor/bin/phpunit
+      - run: 
+          name:  "Run Unit Tests"
+          command: ./vendor/bin/phpunit
